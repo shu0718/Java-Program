@@ -1,0 +1,61 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        // taking input of row and columns
+        int row = scn.nextInt();
+        int columns = scn.nextInt();
+        //initializing the 2d matrix
+        int [][] arr = new int[row][columns];
+        for(int i=0;i<row;i++)
+        {
+            for(int j=0;j<arr[0].length;j++)
+            {
+                arr[i][j] = scn.nextInt();
+            }
+        }
+        int minr = 0;
+        int maxr = row-1;
+        int minc = 0;
+        int maxc = arr[0].length-1;
+        int tn = row*columns;
+        int count = 0;
+        
+        //Code for spiral display of matrix
+        //(tn>count) condition is used for --- 
+        //1.to display for all elements of matrix
+        //2.it's used for as terminating condition 
+        //3. it also to control the printing of duplication of an elements in 3*5 or 5*3 matrix
+        
+        while(count<tn){
+            for(int i=minr,j=minc;i<=maxr && tn>count ;i++)
+            {
+             System.out.println(arr[i][j]);   
+             count++;
+            }
+            minc++;
+            
+            for(int i=maxr,j=minc;j<=maxc && tn>count;j++)
+            {
+             System.out.println(arr[i][j]);  
+             count++;
+            }
+            maxr--;
+            
+            for(int i=maxr,j=maxc;i>=minr && tn>count;i--)
+            {
+             System.out.println(arr[i][j]);  
+             count++;
+            }
+            maxc--;
+            for(int i=minr,j=maxc;j>=minc && tn>count;j--)
+            {
+             System.out.println(arr[i][j]);  
+             count++;
+            }
+            minr++;
+        }
+    }
+}
