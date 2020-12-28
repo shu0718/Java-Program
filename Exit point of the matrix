@@ -1,0 +1,66 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int row = scn.nextInt();
+        int columns = scn.nextInt();
+        // initialized the 2d matix and taking elements of matirx
+        int [][] arr = new int[row][columns];
+        for(int i=0;i<row;i++){
+            for(int j=0;j<arr[0].length;j++){
+                arr[i][j] = scn.nextInt();
+            }
+        }
+        // i,j is the variables which shows the indexes of matirx
+        int i=0,j=0,dir=0;
+        while(true){
+            dir = (dir+arr[i][j])%4;
+            if(dir == 0){// 0 represent the east direction.
+                j++;
+            }
+            else if(dir == 1){// 1 represent the south direction.
+                i++;
+            }
+            else if(dir == 2){// 2 represent the east direction.
+                j--;
+            }
+            else if(dir == 3){// 3 represent the north direction.
+                i--;
+            }
+            if(i<0){//This condition for when i index crosses the upper wall.
+                i++;
+                break;
+            }
+            else if(j<0){// this condition for when j index crosses the left wall. 
+                j++;
+                break;
+            }
+            else if(i==row){// this condition for when i index crosses the lower wall.                
+                i--;
+                break;
+            }
+            else if(j == arr[0].length){// this condition for when j index crosses the right wall.
+                j--;
+                break;
+            }
+        }
+        System.out.println(i);
+        System.out.println(j);
+        
+    }
+    
+    
+    
+    INPUT :- 
+    0 0 1 0
+    1 0 0 0
+    0 0 0 0
+    1 0 1 0
+    
+    OUTPUT:-
+    1 
+    3
+    
+}
