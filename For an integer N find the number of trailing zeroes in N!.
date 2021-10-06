@@ -1,0 +1,82 @@
+Valid for only small numbers:---------------------------------------------
+
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int fact = 1;
+        for(int i=1;i<=n;i++)
+        {
+            fact = fact*i;
+        }
+        System.out.println(fact);
+        
+        int count = 0;
+        while(fact>0)
+        {
+            int temp = fact%10;
+            if(temp == 0)
+            {
+                count++;
+            }
+            else 
+            {
+                break;
+            }
+            fact = fact/10;
+        }
+        System.out.println(count);
+    }
+}
+
+
+Input:---
+10
+
+Output:----
+3628800
+2
+
+
+
+
+Optimised  Approach :------------------
+
+
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int fact = 1;
+        for(int i=1;i<=n;i++)
+        {
+            fact = fact*i;
+        }
+        System.out.println(fact);
+        
+        int count = 0;
+        while(n>=5)
+        {
+            n = Math.floorDiv(n, 5);
+            count += n;
+        }
+        System.out.println(count);
+    }
+}
+
+Input:- 
+384
+
+
+Output:---
+94
