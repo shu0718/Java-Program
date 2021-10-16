@@ -1,0 +1,64 @@
+import java.util.*;
+import java.io.*;
+
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int d = scn.nextInt();
+        StringBuilder arr = new StringBuilder();
+        
+        int q = n/d;
+        int r = n%d;
+        arr.append(q);
+        if(r==0)
+        {
+            System.out.println(arr);
+        }
+        else 
+        {
+            arr.append(".");
+            map<Integer, Integer> map = new HashMap<>();
+            
+            while( r!= 0)
+            {
+                if(map.containsKey(r))
+                {
+                    int len = map.get(r);
+                    arr.insert(len,"(");
+                    arr.append(")");
+                    break;
+                }
+                else{
+                    map.put(r,arr.length());
+                    r = r*10;
+                    q = r/d;
+                    r = r%d;
+                    arr.append(q);
+                }
+
+        }
+            System.out.println(arr);
+        }
+    }
+}
+
+
+
+INPUT:==============
+14
+3
+
+OUTPUT:=============
+4.(6)
+
+
+INPUT_2:============
+25
+2
+
+OUTPUT:=============
+12.5
