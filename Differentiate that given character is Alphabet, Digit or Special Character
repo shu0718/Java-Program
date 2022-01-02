@@ -1,0 +1,26 @@
+import java.util.*;
+import java.io.*:
+public class Main
+{
+    public static void main(String[] args)
+    {   
+        char chr = 'A';
+        
+        if((chr >= 65 && chr <= 90) || (chr>= 97 && chr <= 122))
+        {
+            System.out.println("Alphabet");
+        }
+        else if(chr >= 48 && chr <= 57)
+        {
+            System.out.println("Digit");
+        }
+        else
+        {
+            System.out.println("Special Charater");
+        }
+        
+    }
+}
+
+OUTPUT:======
+Alphabet
