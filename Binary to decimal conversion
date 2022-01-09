@@ -1,0 +1,28 @@
+import java.util.*;
+import java.io.*;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        
+        int decimal = 0;
+        int count=0;
+        while(n>0)
+        {
+            int temp = n%10;
+            decimal += temp*(int)Math.pow(2,count++);
+            n = n/10;
+        }
+        System.out.println(decimal);
+    }
+}
+
+
+Input:---------------------------------
+1010111
+
+Output:===============================
+87
