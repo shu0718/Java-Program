@@ -1,0 +1,26 @@
+import java.util.*;
+import java.io.*;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int decimal = 0;
+        int count = 0;
+        while(n>0)
+        {
+            int bit = n&1;
+            decimal += bit * (int)Math.pow(10,count++);
+            n = n>>1;
+        }
+        System.out.println(decimal);
+    }
+}
+
+INPUT:======================================
+999
+
+OUTPUT:====================================
+1111100111
