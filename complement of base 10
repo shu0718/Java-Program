@@ -1,0 +1,35 @@
+import java.util.*;
+import java.io.*;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int mask = 0;
+        int m = n;
+        
+        if(n == 0)
+        {
+            System.exit(0);
+        }
+        while(m != 0)
+        {
+            mask = (mask<<1) | 1;
+            m = m>>1;
+        }
+        System.out.println(mask&(~n));
+    }
+}
+
+
+INPUT:===============
+5
+OUTPUT:==============
+2
+
+INPUT_1:=============
+0
+OUTPUT_1:============
+1
