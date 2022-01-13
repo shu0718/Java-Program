@@ -1,0 +1,45 @@
+import java.util.*;
+import java.io.*;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int curr = n;
+        
+        if(n == 0)
+        {
+            System.out.println("Not the power of 2");
+            System.exit(0);
+        }
+        
+        while(curr%2 == 0)
+        {
+            curr = curr/2;
+        }
+        
+        if(curr == 1)
+        {
+            System.out.println("Power of the 2");
+            System.exit(0);
+        }
+        System.out.println("NOT the power of 2");
+    }
+}
+
+INPUT:========================
+2
+OUTPUT:=======================
+TRUE
+
+INPUT:=======================
+3
+OUTPUT:======================
+FALSE
+
+INPUT:======================
+16
+OUTPUT:=====================
+TRUE
