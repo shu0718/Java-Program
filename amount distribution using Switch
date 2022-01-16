@@ -1,0 +1,60 @@
+import java.util.*;
+import java.io.*;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        
+        int count = 0;
+        
+        switch(100)
+        {
+            case 100:
+                if(n>=100)
+                {
+                count = n/100;
+                System.out.println("Number of 100's notes are - "+count);
+                n = n-(count*100);
+                }
+                
+            case 50:
+                if(n >= 50)
+                {
+                count = n/50;
+                System.out.println("Number of 50's notes are - "+count);
+                n = n-(count*50);
+                }
+            case 20:
+                if(n >= 20)
+                {
+                    count = n/20;
+                    System.out.println("Number of 20's notes are - "+count);
+                    n = n-(count*20);
+                    
+                }
+            case 10:
+                if(n >= 10)
+                {
+                    count = n/10;
+                    System.out.println("Number of 10's notes are - "+count);
+                    n = n-(count*10);
+                }
+            default:
+                System.out.println("Here is the amount distribution.!!!");
+        }
+        
+        
+    }
+}
+
+INPUT:===============================
+1330
+
+OUTPUT:==============================
+Number of 100's notes are - 13
+Number of 20's notes are - 1
+Number of 10's notes are - 1
+Here is the amount distribution.!!!
