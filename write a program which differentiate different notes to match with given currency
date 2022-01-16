@@ -1,0 +1,51 @@
+import java.util.*;
+import java.io.*;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        
+        int count = 0;
+        while(n != 0)
+        {
+           if(n >= 100)
+           {
+               count = n/100;
+               System.out.println("Number of 100's notes are - "+count);
+               n = n-(count*100);
+           }
+           else if(n >= 50)
+           {
+               count = n/50;
+               System.out.println("Number of 50's notes are - "+count);
+               n = n-(count*50);
+           }
+           else if(n >= 20)
+           {
+               count = n/20;
+               System.out.println("Number of 20's notes are - "+count);
+               n = n-(count*20);
+               
+           }
+           else 
+           {
+               count = n/10;
+               System.out.println("Number of 10's notes are - "+count);
+               n = n-(count*10);
+           }
+        
+        }
+    }
+}
+
+
+INPUT:=======================
+1330
+OUTPUT:======================
+
+Number of 100's notes are - 13
+Number of 20's notes are - 1
+Number of 10's notes are - 1
