@@ -1,0 +1,35 @@
+import java.util.*;
+import java.io.*;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        if(iseven(n))
+        {
+            System.out.println("Given number is even.");
+            
+        }
+        else
+        {
+            System.out.println("Given number is odd");
+        }
+    }
+    
+    public static boolean iseven(int a)
+    {
+        if(a%2==0)
+        {
+            return true;
+        }
+        return false;
+    }
+}
+
+INPUT:==================
+90
+
+OUTPUT:================
+Given number is even.
