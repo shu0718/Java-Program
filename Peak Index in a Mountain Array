@@ -1,0 +1,54 @@
+import java.util.*;
+
+public class Main 
+{
+    
+    public static void main(String[] args)
+    {
+        int[] arr = {1,2,3,4,5,6,7,8,9,10,1};
+        int end = arr.length-1;
+        
+        int highest_peak = peak(arr);
+        
+        System.out.println("The highest peak of the moutain is - " + highest_peak);
+        
+    }
+    
+    public static int peak(int[] arr)
+    {
+        int start = 0;
+        int end = arr.length-1;
+        
+        while(end >= start)
+        {
+            int mid = (end+start)/2;
+            
+            if((arr[mid] > arr[mid-1]) && (arr[mid] > arr[mid+1]))
+            {
+                return mid;
+            }
+            
+            else
+            {
+                if((arr[mid] > arr[mid-1]) || (arr[mid] < arr[mid+1]))
+                {
+                    start = mid+1;
+                }
+                
+                else
+                {
+                    end = mid-1;
+                }
+            }
+            
+        }
+        return 1;
+    }
+}
+
+
+
+
+Output:- 
+
+The highest peak of the moutain is - 9
