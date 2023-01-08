@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        int[] arr = {-1,-1,-1,-1,0,1};
+        
+        int index = pivot(arr);
+        System.out.println(index);
+    }
+    
+    
+    // In this initially we find out the total of entire array and stored in right_Sum variable. Then we start traversing the array from left side and gradually subtract the elements of array form the right_Sum and then compare the sum if the sum matches then we return the index otherwise, we add the same element in the left_Sum and repeat the entire for loop until we achieve pivot index or loop ended.
+    
+    
+    public static int pivot(int[] arr)
+    {
+        int sum = 0;
+        int left_Sum = 0;
+        int right_Sum = 0;
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            sum += arr[i];
+        }
+        right_Sum = sum;
+        for(int i=0;i<arr.length;i++)
+        {
+            right_Sum -= arr[i];
+            if(right_Sum == left_Sum)
+            {
+                return i;
+            }
+            
+            left_Sum += arr[i];
+        }
+        
+        return -1;
+    }
+    
+    
+    Output:------------------
+    1
+}
